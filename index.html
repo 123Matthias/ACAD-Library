@@ -6,19 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <script src="js/loadHTML.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <title>ACAD und ACAD LT Paletten Library</title>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="bg-dark text-white mb-4" style="border-bottom: 1px solid red; box-shadow: 0 2px 4px rgba(255,0,0,0.5);">
-        <div class="container py-3">
-            <h1 class="mb-2">AutoCAD Library</h1>
-            <p>Werkzeugpaletten für AutoCAD und AutoCAD LT</p>
-        </div>
-    </header>
-
+    <div id="header"></div>
 
     <!-- Content -->
     <div class="container">
@@ -95,5 +90,15 @@
 
 
 </body>
+
+
+
+    <script>
+        async function initPage() {
+            await loadHeader();
+            highlightActiveNavLink();
+        }
+        initPage();
+        </script>
 
 </html>
