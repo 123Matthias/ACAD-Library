@@ -1,6 +1,3 @@
-
-
-
 async function loadNavbarListener() {
     const toggler = document.querySelector('.navbar-toggler');
     const menu = document.getElementById('mainNavbar');
