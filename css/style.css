@@ -1,0 +1,10 @@
+.bw-card {
+  background: linear-gradient(135deg, #000000, #434343);
+  border: none;
+  border-radius: 15px;
+}
+
+.card-image-wrapper {
+  padding: 20px;
+}
+
