@@ -31,7 +31,7 @@
               Downloads enthalten [.xtp], [.dwg] und [Metadaten Ordner] für Vorschaubilder.
               Diese Dateien müssen im gleichen Ordner bleiben damit die Werkzeugpalette korrekt funktioniert.
             </p>
-            <a href="videos/AutoCAD Werkzeugpalette installieren komp.mp4" class="btn btn-outline-light mt-auto align-self-start"
+           <a href="#" data-src="videos/werkzeugpalette_installieren.mp4" class="playVideoBtn btn btn-outline-light mt-auto align-self-start"
               target="_blank">
               <i class="fa-solid fa-play-circle"></i> Video ansehen
             </a>
@@ -54,7 +54,7 @@
               Erstellen eines Grundrisses mit Blöcken und Polylinien.
 
             </p>
-            <a href="videos/AutoCAD dynamische Blöcke Tutorial.mp4" class="btn btn-outline-light mt-auto align-self-start"
+            <a href="#" data-src="videos/dyn_Blockbearbeitung.mp4" class="playVideoBtn btn btn-outline-light mt-auto align-self-start"
               target="_blank">
               <i class="fa-solid fa-play-circle"></i> Video ansehen
             </a>
@@ -64,6 +64,19 @@
 
     </div>
   </div>
+
+
+  
+<!-- Popup -->
+<div id="videoPopup" style="display:none;">
+  <div style="position:relative; max-width:90%; max-height:90%;">
+    <video id="popupVideo" controls autoplay style="width:100%; height:auto;">
+      <source src="" type="video/mp4">
+      Dein Browser unterstützt dieses Videoformat nicht.
+    </video>
+    <button id="closeVideo">×</button>
+  </div>
+</div>
 
 </body>
 
@@ -77,6 +90,22 @@
   }
 
   initPage();
+
+
+    const popup = document.getElementById('videoPopup');
+  const video = document.getElementById('popupVideo');
+  const close = document.getElementById('closeVideo');
+
+  document.querySelectorAll('.playVideoBtn').forEach(btn => {
+    btn.onclick = e => {
+      e.preventDefault();
+      video.querySelector('source').src = btn.dataset.src;
+      video.load();
+      popup.style.display = 'flex';
+    }
+  });
+
+  close.onclick = () => popup.style.display = 'none';
 
 </script>
 
