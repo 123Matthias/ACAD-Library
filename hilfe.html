@@ -31,7 +31,7 @@
               Downloads enthalten [.xtp], [.dwg] und [Metadaten Ordner] für Vorschaubilder.
               Diese Dateien müssen im gleichen Ordner bleiben damit die Werkzeugpalette korrekt funktioniert.
             </p>
-            <a href="videos/werkzeugpalette_installieren.mp4" class="btn btn-outline-light mt-auto align-self-start"
+           <a href="#" data-src="videos/werkzeugpalette_installieren.mp4" class="playVideoBtn btn btn-outline-light mt-auto align-self-start"
               target="_blank">
               <i class="fa-solid fa-play-circle"></i> Video ansehen
             </a>
@@ -54,7 +54,7 @@
               Erstellen eines Grundrisses mit Blöcken und Polylinien.
 
             </p>
-            <a href="videos/dyn_blockbearbeitung.mp4" class="btn btn-outline-light mt-auto align-self-start"
+            <a href="#" data-src="videos/dyn_Blockbearbeitung.mp4" class="playVideoBtn btn btn-outline-light mt-auto align-self-start"
               target="_blank">
               <i class="fa-solid fa-play-circle"></i> Video ansehen
             </a>
@@ -64,6 +64,46 @@
 
     </div>
   </div>
+
+
+  
+<!-- Popup -->
+<div id="videoPopup" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+">
+  <div style="border:1px solid white; border-radius:12px; position:relative; width: fit-content; height: fit-content; max-width:90vw; max-height:90vh;">
+    <video id="popupVideo" controls style="display:block; width:90vw; height:90vh; object-fit:contain; border-radius:12px; padding: 5px;">
+      <source src="" type="video/mp4">
+      Dein Browser unterstützt dieses Videoformat nicht.
+    </video>
+
+    <!-- Close Icon (Font Awesome) -->
+    <button id="closeVideo" style="
+      position:absolute;
+      top:-12px;
+      right:-12px;
+      background:#000;
+      color:#fff;
+      border:0;
+      border-radius:50%;
+      width:36px;
+      height:36px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border: 1px solid white;
+    ">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+</div>
 
 </body>
 
@@ -77,6 +117,27 @@
   }
 
   initPage();
+
+
+    const popup = document.getElementById('videoPopup');
+  const video = document.getElementById('popupVideo');
+  const close = document.getElementById('closeVideo');
+
+  document.querySelectorAll('.playVideoBtn').forEach(btn => {
+    btn.onclick = e => {
+      e.preventDefault();
+      video.querySelector('source').src = btn.dataset.src;
+      video.load();
+      popup.style.display = 'flex';
+          video.play();
+    }
+  });
+
+  close.onclick = () => {
+    popup.style.display = 'none';
+    video.pause();
+    video.currentTime = 0;
+  };
 
 </script>
 
