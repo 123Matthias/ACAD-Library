@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/loadHTML.js"></script>
+    <script src="js/listener.js"></script>
+    <title>Kontakt</title>
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <div class="container py-5">
+
+        <form id="contact-form" method="GET">
+            <div class="mb-3">
+                <label for="name" class="form-label">Dein Name</label>
+                <input type="text" class="form-control bg-dark text-white" id="name" name="name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Nachricht an AutoCAD Bibliothek</label>
+                <textarea class="form-control bg-dark text-white" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-light">Mit Mail App senden <i
+                    class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+<div class="container my-4">
+    <div class="bg-dark p-4 border border-secondary rounded" role="alert">
+        <i class="fas fa-info-circle me-2"></i>
+        <p class="mb-0">Diese Kontaktseite schickt eine Nachricht an den <strong>AutoCAD Bibliothek-Entwickler</strong> <a href="mailto:matthias-github@gmx.at" class="text-decoration-none">matthias-github@gmx.at</a>.
+        Dafür wird Ihre <strong>Standard-Mail-App</strong> und die <strong>E-Mail-Adresse</strong>, die Sie am PC eingerichtet haben, verwendet.</p>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 mt-5">
+        <div class="container">
+            <small class="text-muted">
+                © 2026 Matthias – AutoCAD Library ·
+                <a href="https://github.com/123Matthias" target="_blank" class="text-decoration-none">
+                    GitHub
+                </a>
+            </small>
+        </div>
+    </footer>
+
+    <script>
+        async function initPage() {
+            await loadHeader();
+            await loadNavbarListener();
+            NavbarKontakt();
+            highlightActiveNavLink();
+        }
+        initPage();
+
+
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Verhindert, dass das Formular abgeschickt wird (Standardverhalten)
+
+            // Werte aus den Formularfeldern holen
+            var name = document.getElementById("name").value;
+            var message = document.getElementById("message").value;
+
+            // mailto-Link erstellen
+            var mailtoLink = "mailto:matthias-github@gmx.at"
+                + "?subject=" + encodeURIComponent("AutoCAD Bibliothek - Anfrage")
+                + "&body=" + encodeURIComponent("Hallo Matthias," + "\n\n" + message + "\n\n Beste Grüße,\n" + name);
+
+            // Öffne den Standard-Mailclient des Nutzers mit dem vorab ausgefüllten Betreff und Text
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+</body>
+
+</html>

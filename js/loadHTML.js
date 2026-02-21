@@ -4,6 +4,28 @@ async function loadHeader() {
     document.getElementById("header").innerHTML = html;
 }
 
+function NavbarHelp() {
+    const h1 = document.getElementById("h1-header");
+    const notiz = document.getElementById("h1-header-notiz");
+    if (h1) {
+        h1.innerText = "Hilfe";
+    }
+    if(notiz) {
+        notiz.innerText = "Anleitungen und Tutorials.";
+    }
+}
+
+function NavbarKontakt() {
+    const h1 = document.getElementById("h1-header");
+    const notiz = document.getElementById("h1-header-notiz");
+    if (h1) {
+        h1.innerText = "Kontakt";
+    }
+    if(notiz) {
+        notiz.innerText = "Kontaktinformationen und Support.";
+    }
+}
+
 function h1HeaderNavbarHelp() {
     const h1 = document.getElementById("h1-header");
     const notiz = document.getElementById("h1-header-notiz");

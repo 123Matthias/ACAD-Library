@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,7 @@
   <script src="js/loadHTML.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/listener.js"></script>
-  <title>Document</title>
+  <title>Hilfe</title>
 </head>
 
 <body>
@@ -54,7 +54,7 @@
               Erstellen eines Grundrisses mit Blöcken und Polylinien.
 
             </p>
-            <a href="#" data-src="videos/dyn_Blockbearbeitung.mp4" class="playVideoBtn btn btn-outline-light mt-auto align-self-start"
+            <a href="#" data-src="./videos/dyn_Blockbearbeitung.mp4" class="playVideoBtn btn btn-outline-light mt-auto align-self-start"
               target="_blank">
               <i class="fa-solid fa-play-circle"></i> Video ansehen
             </a>
@@ -64,6 +64,12 @@
 
     </div>
   </div>
+
+
+    <video id="popupVideo" controls style="display:block; width:90vw; height:90vh; object-fit:contain; border-radius:12px; padding: 5px;">
+      <source src="./videos/dyn_Blockbearbeitung.mp4" type="video/mp4">
+      Dein Browser unterstützt dieses Videoformat nicht.
+    </video>
 
 
   
@@ -112,7 +118,7 @@
   async function initPage() {
     await loadHeader();
     await loadNavbarListener();
-    h1HeaderNavbarHelp();
+    NavbarHelp();
     highlightActiveNavLink();
   }
 
