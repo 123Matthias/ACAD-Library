@@ -22,7 +22,7 @@
       <!-- Card: Installation WP -->
       <div class="col-lg-4 col-md-6">
         <div class="card bw-card text-white h-100 overflow-hidden shadow" id="palette-installieren">
-          <img src="images/werkzeugpalette.png" class="img-fluid d-block mx-auto img-grayscale rounded card-img-top"
+          <img src="images/werkzeugpalette.jpeg" class="img-fluid d-block mx-auto img-grayscale rounded card-img-top"
             alt="Help Preview">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Werkzeugpalette</h5>
@@ -42,7 +42,7 @@
       <!-- Card: Arbeiten mit dynamischen Blöcken 1 WP -->
       <div class="col-lg-4 col-md-6">
         <div class="card bw-card text-white h-100 overflow-hidden shadow" id="palette-installieren">
-          <img src="images/dynamischeBlockbearbeitung.png" class="img-fluid d-block mx-auto rounded card-img-top"
+          <img src="images/dynamischerBlock.jpeg" class="img-fluid d-block mx-auto img-grayscale card-img-top"
             alt="Help Preview">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Einstellungen für dynamische Blöcke</h5>
@@ -105,12 +105,15 @@
   </div>
 </div>
 
+    <footer id="footer"></footer>
+
 </body>
 
 
 <script>
   async function initPage() {
     await loadHeader();
+    await loadFooter();
     await loadNavbarListener();
     NavbarHelp();
     highlightActiveNavLink();

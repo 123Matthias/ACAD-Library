@@ -4,6 +4,12 @@ async function loadHeader() {
     document.getElementById("header").innerHTML = html;
 }
 
+async function loadFooter() {
+    const res = await fetch("footer.html");
+    const html = await res.text();
+    document.getElementById("footer").innerHTML = html;
+}
+
 function NavbarHelp() {
     const h1 = document.getElementById("h1-header");
     const notiz = document.getElementById("h1-header-notiz");

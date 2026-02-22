@@ -22,7 +22,7 @@
         <div class="row g-4">
 
             <!-- Card: Küche -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-12 col-md-6 col-lg-4 ">
                 <div class="card bw-card text-white h-100 overflow-hidden shadow">
                     <img src="images/kitchen.jpeg" class="img-fluid d-block mx-auto img-grayscale card-img-top"
                         alt="Help Preview">
@@ -41,9 +41,9 @@
             </div>
 
             <!-- Card: Gebäude -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card bw-card text-white h-100 overflow-hidden shadow">
-                    <img src="images/building.png" class="img-fluid d-block mx-auto card-img-top"
+                    <img src="images/building.jpeg" class="img-fluid d-block mx-auto img-grayscale card-img-top"
                         alt="Help Preview">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Gebäude</h5>
@@ -60,19 +60,29 @@
                     </div>
                 </div>
             </div>
+
+                        <!-- Card: Zeichnungsrahmen -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card bw-card text-white h-100 overflow-hidden shadow">
+                    <img src="images/zeichnungsrahmen.jpeg" class="img-fluid d-block mx-auto img-grayscale card-img-top"
+                        alt="Help Preview">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Zeichnungsrahmen</h5>
+                        <h6 class="card-subtitle mb-2">Werkzeugpalette</h6>
+                        <p class="card-text">
+                            Enthält Blöcke für DIN A3 bis A0 für Layout bzw. Zeichnungsableitung zum Drucken.
+                        </p>
+                        <a href="#" class="btn btn-outline-light mt-auto align-self-start disabled" >
+                            <i class="fa-solid fa-download"></i> in Arbeit
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer class="bg-light text-center py-3 mt-5">
-        <div class="container">
-            <small class="text-muted">
-                © 2026 Matthias – ACAD Library ·
-                <a href="https://github.com/123Matthias" target="_blank" class="text-decoration-none">
-                    GitHub
-                </a>
-            </small>
-        </div>
-    </footer>
+<footer id="footer">
+</footer>
 
 
 
@@ -83,6 +93,7 @@
 <script>
     async function initPage() {
         await loadHeader();
+        await loadFooter();
         await loadNavbarListener();
         highlightActiveNavLink();
     }

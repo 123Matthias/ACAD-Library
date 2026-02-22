@@ -14,7 +14,7 @@ body {
 }
 
 .card-image-wrapper {
-  padding: 20px;
+  
 }
 
 .img-grayscale {
@@ -22,8 +22,21 @@ body {
 }
 
 .card-img-top {
-  height: 333px;     
-  width: 100%;
   object-fit: contain;
   object-position: top;
+}
+
+.a-Default {
+    color: #ff6b9d;              /* hellrosa */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.a-Default:hover {
+    color: #ff3f87;              /* kräftiger beim Hover */
+    text-decoration: underline;
+}
+
+.a-Default:visited {
+    color: #b26bff;              /* violett für besuchte Links */
 }
